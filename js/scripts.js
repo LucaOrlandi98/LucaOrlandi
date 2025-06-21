@@ -48,3 +48,35 @@ if(slides.length) {
     showSlide(current);
   }, 5000);
 }
+
+// Contact form submission with fetch
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('form[action^="https://formspree.io"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      try {
+        const resp = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+        const status = document.createElement('div');
+        status.className = 'form-status';
+        if (resp.ok) {
+          status.textContent = 'Messaggio inviato con successo!';
+          contactForm.reset();
+        } else {
+          status.textContent = 'Si è verificato un errore durante l\'invio.';
+        }
+        contactForm.appendChild(status);
+      } catch (err) {
+        const status = document.createElement('div');
+        status.className = 'form-status';
+        status.textContent = 'Errore di rete.';
+        contactForm.appendChild(status);
+      }
+    });
+  }
+});
