@@ -4,15 +4,20 @@ const menu = document.querySelector('.mobile-menu');
 const content = document.querySelector('.site-content');
 const closeBtn = document.querySelector('.mobile-menu .close-btn');
 
+// Toggle menu from hamburger button
 navToggle.addEventListener('click', () => {
-  menu.classList.add('open');
-  content.classList.add('shifted');
-  document.body.classList.add('menu-open');
+  const isOpen = menu.classList.contains('open');
+  menu.classList.toggle('open');
+  content.classList.toggle('shifted');
+  document.body.classList.toggle('menu-open');
+  navToggle.setAttribute('aria-expanded', !isOpen);
 });
+// Explicit close button inside overlay
 closeBtn.addEventListener('click', () => {
   menu.classList.remove('open');
   content.classList.remove('shifted');
   document.body.classList.remove('menu-open');
+  navToggle.setAttribute('aria-expanded', false);
 });
 
 // Header shadow on scroll
