@@ -253,6 +253,13 @@ body {
   transform: translateY(-2px);
 }
 
+/* Form status message */
+.form-status {
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
 /* Slider */
 .slider {
   position: relative;
