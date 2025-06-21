@@ -45,11 +45,11 @@
     
     <section class="section">
       <div class="container">
-        <form>
-          <input type="text" placeholder="Nome" required><br><br>
-          <input type="email" placeholder="Email" required><br><br>
-          <textarea placeholder="Messaggio" required></textarea><br><br>
-          <button class="btn-primary">Invia Messaggio</button>
+        <form action="mailto:orlandiluca00@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="nome" placeholder="Nome" required><br><br>
+          <input type="email" name="email" placeholder="Email" required><br><br>
+          <textarea name="messaggio" placeholder="Messaggio" required></textarea><br><br>
+          <button type="submit" class="btn-primary">Invia Messaggio</button>
         </form>
       </div>
     </section>
