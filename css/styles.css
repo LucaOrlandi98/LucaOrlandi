@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Attila San Classic', sans-serif;
   color: #333;
   line-height: 1.6;
   background-color: #f9f9f9;
@@ -152,6 +152,13 @@ body {
   padding: 0.5rem 1rem;
   display: block;
   width: 100%;
+  transition: color var(--transition-fast);
+}
+
+.mobile-menu ul li a:hover,
+.mobile-menu ul li a:focus,
+.mobile-menu ul li a:active {
+  color: #4ECDC4;
 }
 
 /* Hero */
